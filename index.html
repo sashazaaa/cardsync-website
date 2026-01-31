@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CardSync - Cardmarket shipping, simplified</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -38,9 +41,7 @@
         <span class="gradient-text">simplified</span>
       </h1>
       <p class="hero-subtitle">
-        Stop juggling browser tabs. CardSync syncs your Cardmarket orders to MyParcel instantly, saves tracking codes, and auto-marks shipments as sent. Built for sellers who value their time.
-      </p>
-      <div class="hero-cta">
+        No more copy-pasting between Cardmarket and your shipping provider. Sync addresses, buy labels in bulk, and push tracking codes back automatically — without changing how you already ship.<div class="hero-cta">
         <a href="#pricing" class="btn-primary btn-large">
           Join Waitlist
           <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor">
@@ -49,7 +50,7 @@
         </a>
         <p class="cta-note">
           <span class="badge-dot-inline"></span>
-          Now in early access · Netherlands launching first
+          Early access in Netherlands
         </p>
       </div>
       <div class="hero-image">
@@ -61,103 +62,74 @@
             <div class="browser-url">app.cardsync.eu</div>
           </div>
           <div class="browser-content">
-            <div class="dashboard-preview">
-              <div class="sidebar-preview">
-                <div class="sidebar-item active"></div>
-                <div class="sidebar-item"></div>
-                <div class="sidebar-item"></div>
-              </div>
-              <div class="content-preview">
-                <div class="header-preview">
-                  <div class="header-title"></div>
-                  <div class="header-actions"></div>
-                </div>
-                <div class="table-preview">
-                  <div class="table-row"><div class="row-status ready"></div><div class="row-content"></div></div>
-                  <div class="table-row"><div class="row-status queue"></div><div class="row-content"></div></div>
-                  <div class="table-row"><div class="row-status ready"></div><div class="row-content"></div></div>
-                  <div class="table-row"><div class="row-status shipped"></div><div class="row-content"></div></div>
-                  <div class="table-row"><div class="row-status queue"></div><div class="row-content"></div></div>
-                </div>
-              </div>
-            </div>
+            <img src="images/cardsync-hero.webp" alt="CardSync Dashboard - Label Queue" class="hero-screenshot">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="features" id="features">
-    <div class="features-container">
-      <div class="section-header">
-        <h2>Stop switching tabs.<br>Start saving time.</h2>
-        <p>No more copy-pasting between Cardmarket and your shipping provider. CardSync connects your entire workflow.</p>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+      <div class="how-it-works-container">
+        <div class="section-header">
+          <h2>Your workflow,<br>streamlined</h2>
+          <p>CardSync doesn't automate your workflow. It just removes the manual steps between Cardmarket and your shipping provider.</p>
+        </div>
+  
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Sync orders from Cardmarket</h3>
+              <p>Pull order and shipping details into CardSync with a click.</p>
+            </div>
+          </div>
+  
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Buy shipping labels in bulk</h3>
+              <p>Export orders to your shipping provider and pay for labels in one go.</p>
+            </div>
+          </div>
+  
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Sync tracking codes back</h3>
+              <p>Push tracking numbers back into Cardmarket with a click.</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
+  <!-- Product Showcase Section -->
+  <section class="showcase" id="features">
+    <div class="showcase-container">
+      <div class="showcase-grid">
+        <div class="showcase-card">
+          <div class="showcase-image">
+            <img src="images/chrome-extension.png" alt="CardSync Chrome Extension">
+            <div class="showcase-fade"></div>
           </div>
-          <h3>One-click order sync</h3>
-          <p>Sync complete order details including buyer address, shipping method, and items with a single click. No manual data entry.</p>
+          <div class="showcase-content">
+            <h3>Chrome extension</h3>
+            <p>Sync orders directly from Cardmarket. CardSync adds a button to paid orders so you can pull address and order details with one click.</p>
+          </div>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="9" y1="15" x2="15" y2="15"/>
-            </svg>
+        <div class="showcase-card">
+          <div class="showcase-image">
+            <img src="images/dashboard.png" alt="CardSync Dashboard">
+            <div class="showcase-fade"></div>
           </div>
-          <h3>Bulk label generation</h3>
-          <p>Export all your orders to CSV and upload directly to your shipping provider. Print hundreds of labels in minutes.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="16 18 22 12 16 6"/>
-              <polyline points="8 6 2 12 8 18"/>
-            </svg>
+          <div class="showcase-content">
+            <h3>CardSync dashboard</h3>
+            <p>Manage synced orders and export them to your shipping provider. Generate bulk labels and push tracking codes back to Cardmarket from one place.</p>
           </div>
-          <h3>Auto-fill tracking codes</h3>
-          <p>Import tracking codes from your shipping provider and CardSync automatically adds them to the right orders. Zero manual work.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-            </svg>
-          </div>
-          <h3>Smart shipment detection</h3>
-          <p>Mark an order as sent on Cardmarket? We detect it instantly and update your dashboard. Always in sync.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <h3>Privacy-first design</h3>
-          <p>Customer addresses are automatically purged the moment you mark an order as shipped. GDPR compliant by default.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-          </div>
-          <h3>Built for Chrome</h3>
-          <p>Lightweight extension that integrates seamlessly into Cardmarket and your shipping provider's website. No separate app needed.</p>
         </div>
       </div>
     </div>
@@ -167,8 +139,8 @@
   <section class="supported">
     <div class="supported-container">
       <div class="section-header">
-        <h2>Starting in Europe.<br>Expanding worldwide.</h2>
-        <p>Currently supporting European sellers with MyParcel and PostNL integration. More countries and carriers coming soon.</p>
+        <h2>Live in the Netherlands.</h2>
+        <p>Supporting Dutch sellers with MyParcel and PostNL integration. More countries and carriers coming soon.</p>
       </div>
 
       <div class="carriers-grid">
@@ -207,55 +179,21 @@
     </div>
   </section>
 
-  <!-- How it works -->
-  <section class="how-it-works">
-    <div class="how-it-works-container">
-      <div class="section-header">
-        <h2>Your workflow,<br>streamlined</h2>
-        <p>No tab switching. No copy-pasting. Just your existing workflow, but faster.</p>
-      </div>
 
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Sync from Cardmarket</h3>
-            <p>One click captures everything: buyer details, shipping address, order items, and shipping method. All the data you need, instantly.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>Bulk buy shipping labels</h3>
-            <p>Export your orders and upload to MyParcel, PostNL, or your preferred carrier. Generate hundreds of labels in one go.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Auto-copy tracking codes</h3>
-            <p>Import tracking codes back to CardSync and we automatically match them to the right orders. Cardmarket gets updated. Done.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Comparison Section -->
   <section class="comparison" id="pricing">
     <div class="comparison-container">
       <div class="section-header">
         <h2>Stop the manual madness</h2>
-        <p>See how much time CardSync saves on your daily shipping workflow</p>
+        <p>See how much time CardSync removes from your monthly shipping workflow</p>
       </div>
 
       <div class="comparison-table">
         <div class="comparison-header">
           <div class="comparison-cell"></div>
           <div class="comparison-cell">
-            <div class="comparison-label manual">Without CardSync</div>
+            <div class="comparison-label manual">Manually today</div>
           </div>
           <div class="comparison-cell">
             <div class="comparison-label cardsync">With CardSync</div>
@@ -265,10 +203,13 @@
         <div class="comparison-row">
           <div class="comparison-cell feature-name">
             <span class="feature-icon-small">📋</span>
-            Sync order addresses
+            Get order details
           </div>
           <div class="comparison-cell">
             <div class="comparison-value manual-process">
+              <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M4 4l8 8M12 4l-8 8"/>
+              </svg>
               Manually copy-paste each buyer's address
             </div>
           </div>
@@ -277,7 +218,7 @@
               <svg class="check-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M3 8l3 3 7-7"/>
               </svg>
-              One-click sync with full details
+              Sync full address details with one click
             </div>
           </div>
         </div>
@@ -289,7 +230,10 @@
           </div>
           <div class="comparison-cell">
             <div class="comparison-value manual-process">
-              Create labels one-by-one in carrier website
+              <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M4 4l8 8M12 4l-8 8"/>
+              </svg>
+              Buy labels one by one on the carrier website
             </div>
           </div>
           <div class="comparison-cell">
@@ -297,7 +241,7 @@
               <svg class="check-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M3 8l3 3 7-7"/>
               </svg>
-              Bulk order via CSV upload
+              Export orders and buy labels in bulk
             </div>
           </div>
         </div>
@@ -309,7 +253,10 @@
           </div>
           <div class="comparison-cell">
             <div class="comparison-value manual-process">
-              Copy-paste tracking codes one by one
+              <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M4 4l8 8M12 4l-8 8"/>
+              </svg>
+              Copy-paste tracking codes back into Cardmarket
             </div>
           </div>
           <div class="comparison-cell">
@@ -317,7 +264,7 @@
               <svg class="check-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M3 8l3 3 7-7"/>
               </svg>
-              Auto-import and match tracking codes
+              Import and match tracking codes automatically
             </div>
           </div>
         </div>
@@ -332,7 +279,7 @@
           <div class="comparison-cell">
             <div class="total-time manual">
               <strong id="manual-time">~20.8 hours</strong>
-              <span class="time-label">wasted per month</span>
+              <span class="time-label">manual work per month</span>
             </div>
           </div>
           <div class="comparison-cell">
@@ -352,7 +299,7 @@
       </div>
 
       <div class="comparison-cta">
-        <p class="comparison-subtitle">Save <strong>80% of your shipping time.</strong> Your competitors already are.</p>
+        <p class="comparison-subtitle">Save <strong>80% of your shipping time.</strong> Without changing how you already ship.</p>
         <a href="https://tally.so/r/your-form-id" target="_blank" rel="noopener" class="btn-primary btn-large">Join Waitlist</a>
       </div>
     </div>

@@ -25,9 +25,9 @@ const hoursSavedMonth = document.getElementById('hours-saved-month');
 function calculateSavings() {
   const orders = parseInt(ordersInput.value) || 0;
 
-  // 2 minutes manual vs 20 seconds with CardSync
+  // 2 minutes manual vs 10 seconds with CardSync
   const manualMinutes = orders * 2;
-  const cardsyncMinutes = orders * (20 / 60); // 20 seconds = 0.333 minutes
+  const cardsyncMinutes = orders * (10 / 60); // 10 seconds per order
   const savedMinutes = manualMinutes - cardsyncMinutes;
 
   const manualHours = (manualMinutes / 60).toFixed(1);
