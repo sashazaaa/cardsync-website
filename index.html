@@ -23,11 +23,21 @@
         </div>
       </div>
       <div class="nav-right">
-        <a href="https://app.cardsync.eu" class="nav-link">Login</a>
-        <a href="https://tally.so/r/your-form-id" target="_blank" rel="noopener" class="btn-primary">Join Waitlist</a>
+        <a href="https://app.cardsync.eu" class="nav-link">Dashboard</a>
+        <button class="btn-primary btn-waitlist">Join Waitlist</button>
       </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="https://app.cardsync.eu" class="mobile-menu-link">Dashboard</a>
+    <button class="btn-primary btn-waitlist mobile-menu-cta">Join Waitlist</button>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -37,13 +47,15 @@
         <span class="gradient-text">simplified</span>
       </h1>
       <p class="hero-subtitle">
-        No more copy-pasting between Cardmarket and your shipping provider. Sync addresses, buy labels in bulk, and push tracking codes back automatically — without changing how you already ship.<div class="hero-cta">
-        <a href="#pricing" class="btn-primary btn-large">
+        No more copy-pasting between Cardmarket and your shipping provider. Sync addresses, buy labels in bulk, and push tracking codes back automatically — without changing how you already ship.
+      </p>
+      <div class="hero-cta">
+        <button class="btn-primary btn-large btn-waitlist">
           Join Waitlist
           <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor">
             <path d="M5.5 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </a>
+        </button>
         <p class="cta-note">
           <span class="badge-dot-inline"></span>
           Closed beta · Live in the Netherlands
@@ -74,69 +86,41 @@
           <p>CardSync doesn't automate your workflow. It just removes the manual steps between Cardmarket and your shipping provider.</p>
         </div>
   
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>Sync orders from Cardmarket</h3>
-              <p>Pull order and shipping details into CardSync with a click.</p>
+        <div class="showcase-container">
+          <div class="showcase-grid">
+            <div class="showcase-card">
+              <div class="showcase-image">
+                <img src="images/chrome-extension.png" alt="CardSync Chrome extension on Cardmarket">
+              </div>
+              <div class="showcase-content">
+                <span class="feature-label">Chrome Extension</span>
+                <h3>Sync addresses & tracking</h3>
+                <p>Our chrome extension adds buttons to Cardmarket so you can sync address details and tracking codes without copy pasting.</p>
+              </div>
             </div>
-          </div>
-  
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>Buy shipping labels in bulk</h3>
-              <p>Export orders to your shipping provider and pay for labels in one go.</p>
-            </div>
-          </div>
-  
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3>Sync tracking codes back</h3>
-              <p>Push tracking numbers back into Cardmarket with a click.</p>
+    
+            <div class="showcase-card">
+              <div class="showcase-image">
+                <img src="images/dashboard.png" alt="CardSync dashboard with bulk export">
+              </div>
+              <div class="showcase-content">
+                <span class="feature-label">Dashboard</span>
+                <h3>Create shipping labels in bulk</h3>
+                <p>Manage all your orders in one place, export and create shipping labels in bulk with your preferred shipping provider.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-  <!-- Product Showcase Section -->
-  <section class="showcase" id="features">
-    <div class="showcase-container">
-      <div class="showcase-grid">
-        <div class="showcase-card">
-          <div class="showcase-image">
-            <img src="images/chrome-extension.png" alt="CardSync Chrome Extension">
-            <div class="showcase-fade"></div>
-          </div>
-          <div class="showcase-content">
-            <h3>Chrome extension</h3>
-            <p>Sync orders directly from Cardmarket. CardSync adds a button to paid orders so you can pull address and order details with one click.</p>
-          </div>
-        </div>
-
-        <div class="showcase-card">
-          <div class="showcase-image">
-            <img src="images/dashboard.png" alt="CardSync Dashboard">
-            <div class="showcase-fade"></div>
-          </div>
-          <div class="showcase-content">
-            <h3>CardSync dashboard</h3>
-            <p>Manage synced orders and export them to your shipping provider. Generate bulk labels and push tracking codes back to Cardmarket from one place.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Supported Countries & Carriers -->
   <section class="supported">
     <div class="supported-container">
       <div class="section-header">
         <h2>Live in the Netherlands.</h2>
-        <p>SCardSync is currently in closed beta. We’re onboarding sellers gradually to ensure a smooth experience. More carriers and regions coming soon.</p>
+        <p>CardSync is currently in closed beta. We’re onboarding sellers gradually to ensure a smooth experience. More carriers and regions coming soon.</p>
       </div>
 
       <div class="carriers-grid">
@@ -170,7 +154,7 @@
       </div>
 
       <div class="supported-footer">
-        <p>Want CardSync in your country? <a href="mailto:hello@cardsync.eu">Let us know</a> and we'll prioritize your region.</p>
+        <p>Want CardSync in your country? <a href="#" class="btn-waitlist">Let us know</a> and we'll prioritize your region.</p>
       </div>
     </div>
   </section>
@@ -296,7 +280,7 @@
 
       <div class="comparison-cta">
         <p class="comparison-subtitle">Save <strong>80% of your shipping time.</strong> Without changing how you already ship.</p>
-        <a href="https://tally.so/r/your-form-id" target="_blank" rel="noopener" class="btn-primary btn-large">Join Waitlist</a>
+        <button class="btn-primary btn-large btn-waitlist">Join Waitlist</button>
       </div>
     </div>
   </section>
@@ -342,6 +326,18 @@
           </button>
           <div class="faq-answer">
             <p>Absolutely. Customer addresses are only stored temporarily to facilitate shipping and are automatically purged the moment you mark an order as shipped. We're GDPR compliant by design and never share your data with third parties. Your data stays between you, Cardmarket, and your shipping provider.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does CardSync handle GDPR?</span>
+            <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 6l4 4 4-4"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>CardSync is designed with GDPR compliance at its core. Buyer addresses are stored only long enough to generate your shipping labels and are automatically and permanently deleted once you mark an order as shipped. We don't use tracking cookies, don't share data with third parties, and all data is hosted in the EU. You can request a full export or deletion of your data at any time. Read our <a href="/privacy">Privacy Policy</a> for full details.</p>
           </div>
         </div>
 
@@ -396,29 +392,104 @@
         </div>
         <p class="footer-tagline">Cardmarket shipping, simplified</p>
       </div>
-      <div class="footer-links">
-        <div class="footer-column">
-          <h4>Product</h4>
-          <a href="#features">Features</a>
-          <a href="#pricing">Waitlist</a>
-          <a href="https://app.cardsync.eu">Dashboard</a>
-        </div>
-        <div class="footer-column">
-          <h4>Support</h4>
-          <a href="mailto:help@cardsync.eu">Help Center</a>
-          <a href="mailto:hello@cardsync.eu">Contact</a>
-        </div>
-        <div class="footer-column">
-          <h4>Legal</h4>
+      <div class="footer-right">
+        <button class="btn-primary btn-waitlist">Join Waitlist</button>
+        <div class="footer-links">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 CardSync. All rights reserved.</p>
+      <div class="footer-badges">
+        <span class="gdpr-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          GDPR Compliant
+        </span>
+        <span class="eu-hosted-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          EU Hosted
+        </span>
+      </div>
+      <p class="footer-beta-note">CardSync is an early-stage project currently in closed beta.</p>
+      <p>&copy; 2026 CardSync. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Waitlist Modal -->
+  <div class="modal-overlay" id="waitlist-modal">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 4l8 8M12 4l-8 8"/>
+        </svg>
+      </button>
+
+      <div class="modal-body" id="modal-form-state">
+        <div class="modal-info">
+          <h2 class="modal-header">Join the waitlist</h2>
+          <p class="modal-intro">CardSync is currently in closed beta. We're onboarding sellers gradually — leave your details and we'll reach out when it's your turn.</p>
+        </div>
+
+        <form class="modal-form" id="waitlist-form" novalidate>
+          <div class="form-group">
+            <label for="waitlist-country">Country</label>
+            <div class="country-select" id="country-select">
+              <button type="button" class="country-select-trigger" id="country-trigger">
+                <span id="country-value">Netherlands</span>
+                <svg class="country-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 6l4 4 4-4"/>
+                </svg>
+              </button>
+              <div class="country-dropdown" id="country-dropdown">
+                <input type="text" class="country-search" id="country-search" placeholder="Search countries...">
+                <ul class="country-list" id="country-list"></ul>
+              </div>
+            </div>
+            <span class="form-error" id="error-country"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="waitlist-username">Cardmarket username</label>
+            <input type="text" id="waitlist-username" name="username" placeholder="Your Cardmarket username" autocomplete="off">
+            <span class="form-error" id="error-username"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="waitlist-email">Email address</label>
+            <input type="email" id="waitlist-email" name="email" placeholder="you@example.com" autocomplete="email">
+            <span class="form-error" id="error-email"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="waitlist-orders">Orders per month</label>
+            <input type="text" inputmode="numeric" id="waitlist-orders" name="orders" placeholder="e.g. 200" autocomplete="off">
+            <span class="form-error" id="error-orders"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="waitlist-shipping">Shipping provider</label>
+            <input type="text" id="waitlist-shipping" name="shipping" placeholder="e.g. PostNL, MyParcel, DHL" autocomplete="off">
+            <span class="form-error" id="error-shipping"></span>
+          </div>
+
+          <button type="submit" class="btn-primary btn-large btn-block">Join Waitlist</button>
+          <p class="modal-legal">By joining, you agree to our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a>.</p>
+        </form>
+      </div>
+
+      <div class="modal-success" id="modal-success-state">
+        <div class="success-checkmark">
+          <svg viewBox="0 0 52 52" fill="none">
+            <circle cx="26" cy="26" r="25" stroke="var(--green-500)" stroke-width="2"/>
+            <path d="M14 27l8 8 16-16" stroke="var(--green-500)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2 class="modal-header">You're on the list!</h2>
+        <p class="modal-intro">Thanks for signing up. We'll reach out when it's your turn to get started with CardSync.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
