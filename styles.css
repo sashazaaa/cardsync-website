@@ -116,10 +116,7 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 3px 6px;
-  background: var(--purple-100);
-  color: var(--purple-600);
-  border-radius: 4px;
+  color: var(--gray-500);
 }
 
 .nav-right {
@@ -545,56 +542,64 @@ body {
 }
 
 /* Product Showcase Section */
-.showcase {
-  padding: 120px 24px;
-  background: white;
-}
-
-.showcase-container {
-  max-width: 1200px;
+/* Stacked showcase cards */
+.showcase-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
 .showcase-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
   background: var(--gray-50);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--gray-200);
 }
 
-.showcase-image {
-  position: relative;
-  width: 100%;
+.showcase-card.reverse {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.showcase-card.reverse .showcase-card-content {
+  order: 2;
+}
+
+.showcase-card.reverse .showcase-card-image {
+  order: 1;
+}
+
+.showcase-card-image {
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
-.showcase-image img {
+.showcase-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
 }
 
-.showcase-content {
-  padding: 24px;
+.showcase-card-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.showcase-content h3 {
-  font-size: 22px;
+.showcase-card-content h3 {
+  font-size: 24px;
   font-weight: 600;
-  margin: 8px 0;
+  margin: 10px 0 14px;
   color: var(--gray-900);
   letter-spacing: -0.01em;
 }
 
-.showcase-content p {
-  font-size: 15px;
+.showcase-card-content p {
+  font-size: 16px;
   line-height: 1.6;
   color: var(--gray-600);
 }
@@ -1254,13 +1259,17 @@ button[type="submit"]:disabled {
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 500px;
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  overflow: hidden;
 }
 
 .faq-answer p {
@@ -1770,21 +1779,16 @@ body.modal-open {
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .showcase-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+  .showcase-card-content {
+    padding: 24px;
   }
 
-  .showcase-content {
-    padding: 16px;
+  .showcase-card-content h3 {
+    font-size: 20px;
   }
 
-  .showcase-content h3 {
-    font-size: 16px;
-  }
-
-  .showcase-content p {
-    font-size: 14px;
+  .showcase-card-content p {
+    font-size: 15px;
   }
 
   .steps {
@@ -1814,8 +1818,24 @@ body.modal-open {
     font-size: 40px;
   }
 
-  .showcase-grid {
+  .showcase-card {
     grid-template-columns: 1fr;
+  }
+
+  .showcase-card.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-card.reverse .showcase-card-content {
+    order: 1;
+  }
+
+  .showcase-card.reverse .showcase-card-image {
+    order: 2;
+  }
+
+  .showcase-card-content {
+    padding: 20px;
   }
 
   .pricing-grid {
