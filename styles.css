@@ -1427,13 +1427,10 @@ body.modal-open {
 }
 
 .modal-close {
-  position: sticky;
-  top: 0;
+  position: absolute;
+  top: 16px;
+  right: 16px;
   z-index: 2;
-  margin-top: -24px;
-  margin-right: -24px;
-  margin-left: auto;
-  margin-bottom: -8px;
   width: 32px;
   height: 32px;
   display: flex;
@@ -1446,7 +1443,6 @@ body.modal-open {
   color: var(--gray-500);
   transition: all 0.2s ease;
   padding: 0;
-  flex-shrink: 0;
 }
 
 .modal-close:hover {
@@ -1956,8 +1952,11 @@ body.modal-open {
   }
 
   .modal-close {
+    position: sticky;
     top: 0;
-    margin-bottom: -16px;
+    right: auto;
+    margin-left: auto;
+    margin-bottom: -32px;
   }
 
   .modal-body {
