@@ -1430,8 +1430,10 @@ body.modal-open {
   position: sticky;
   top: 0;
   z-index: 2;
+  margin-top: -24px;
+  margin-right: -24px;
   margin-left: auto;
-  margin-bottom: -32px;
+  margin-bottom: -8px;
   width: 32px;
   height: 32px;
   display: flex;
