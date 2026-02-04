@@ -133,6 +133,7 @@
         <p>CardSync is currently in closed beta. We’re onboarding sellers gradually to ensure a smooth experience. More carriers and regions coming soon.</p>
       </div>
 
+
       <div class="carriers-grid">
         <!-- Active Carriers -->
         <div class="carrier-card active">
@@ -166,6 +167,8 @@
       <div class="supported-footer">
         <p>Want CardSync in your country? <a href="#" class="btn-waitlist">Let us know</a> and we'll prioritize your region.</p>
       </div>
+
+
     </div>
   </section>
 
@@ -174,14 +177,13 @@
   <!-- Comparison Section -->
   <section class="comparison" id="pricing">
     <div class="comparison-container">
-      <div class="section-header">
-        <h2>Stop the manual madness</h2>
+      <div class="section-header comparison-h2">
+        <h2>Save 80% of your shipping time</h2>
         <p>See how much time CardSync removes from your monthly shipping workflow</p>
       </div>
 
       <div class="comparison-table">
         <div class="comparison-header">
-          <div class="comparison-cell"></div>
           <div class="comparison-cell">
             <div class="comparison-label manual">Manually today</div>
           </div>
@@ -191,10 +193,6 @@
         </div>
 
         <div class="comparison-row">
-          <div class="comparison-cell feature-name">
-            <span class="feature-icon-small">📋</span>
-            Get order details
-          </div>
           <div class="comparison-cell">
             <div class="comparison-value manual-process">
               <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -214,10 +212,6 @@
         </div>
 
         <div class="comparison-row">
-          <div class="comparison-cell feature-name">
-            <span class="feature-icon-small">📦</span>
-            Buy shipping labels
-          </div>
           <div class="comparison-cell">
             <div class="comparison-value manual-process">
               <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -237,10 +231,6 @@
         </div>
 
         <div class="comparison-row">
-          <div class="comparison-cell feature-name">
-            <span class="feature-icon-small">🔢</span>
-            Update tracking codes
-          </div>
           <div class="comparison-cell">
             <div class="comparison-value manual-process">
               <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -261,12 +251,6 @@
 
         <div class="comparison-footer">
           <div class="comparison-cell">
-            <div class="calculator-input-inline">
-              <label for="orders-input">Your monthly orders:</label>
-              <input type="number" id="orders-input" value="500" min="1" max="10000">
-            </div>
-          </div>
-          <div class="comparison-cell">
             <div class="total-time manual">
               <strong id="manual-time">~20.8 hours</strong>
               <span class="time-label">manual work per month</span>
@@ -282,14 +266,19 @@
 
         <div class="comparison-savings-row">
           <div class="savings-highlight">
-            <span class="savings-label">You save</span>
-            <span class="savings-value" id="hours-saved-month">~19.4 hours/month</span>
+            <div class="calculator-input-inline">
+              <label for="orders-input">Your monthly orders:</label>
+              <input type="number" id="orders-input" value="500" min="1" max="10000">
+            </div>
+            <div class="savings-result">
+              <span class="savings-label">You save</span>
+              <span class="savings-value" id="hours-saved-month">~19.4 hours/month</span>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="comparison-cta">
-        <p class="comparison-subtitle">Save <strong>80% of your shipping time.</strong> Without changing how you already ship.</p>
         <button class="btn-primary btn-large btn-waitlist">Join Waitlist</button>
       </div>
     </div>
