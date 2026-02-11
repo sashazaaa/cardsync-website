@@ -633,7 +633,7 @@ body {
 }
 
 .supported-container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -703,8 +703,10 @@ body {
 
 .supported-footer {
   text-align: center;
-  padding-top: 32px;
-  border-top: 1px solid var(--gray-200);
+  padding: 24px;
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  background: white;
 }
 
 .supported-footer p {
@@ -788,8 +790,7 @@ body {
 /* Comparison Section */
 .comparison {
   padding: 120px 24px;
-  background: linear-gradient(180deg, #1a1a1f 0%, #0f0f14 100%);
-  color: white;
+  background: var(--gray-50);
   position: relative;
   overflow: hidden;
 }
@@ -797,134 +798,127 @@ body {
 .comparison::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -0;
   left: 50%;
   transform: translateX(-50%);
-  width: 1200px;
-  height: 1200px;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+  width: 1000px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
 .comparison-container {
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-.comparison .section-header h2,
-.comparison .section-header p {
-  color: white;
-}
-
-.comparison .section-header p {
-  color: rgba(255, 255, 255, 0.7);
-}
-
 .comparison-table {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: white;
+  border: 1px solid var(--gray-200);
   border-radius: 16px;
   overflow: hidden;
   margin-top: 48px;
-  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-xl);
 }
 
 .comparison-header {
   display: grid;
-  grid-template-columns: 1.2fr 1.5fr 1.5fr;
-  gap: 24px;
-  padding: 24px 32px;
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.comparison-header .comparison-cell {
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.comparison-header .comparison-cell:first-child {
+  border-right: 1px solid var(--gray-200);
 }
 
 .comparison-row {
   display: grid;
-  grid-template-columns: 1.2fr 1.5fr 1.5fr;
-  gap: 24px;
-  padding: 28px 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--gray-100);
   transition: background 0.2s ease;
 }
 
 .comparison-row:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--gray-50);
 }
 
 .comparison-row:last-of-type {
   border-bottom: none;
 }
 
+.comparison-row .comparison-cell:first-child {
+  border-right: 1px solid var(--gray-100);
+}
+
 .comparison-footer {
   display: grid;
-  grid-template-columns: 1.2fr 1.5fr 1.5fr;
-  gap: 24px;
-  padding: 28px 32px;
-  background: rgba(147, 51, 234, 0.1);
-  border-top: 1px solid rgba(168, 85, 247, 0.3);
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.comparison-footer .comparison-cell {
+  padding: 24px 32px;
+}
+
+.comparison-footer .comparison-cell:first-child {
+  border-right: 1px solid var(--gray-100);
+}
+
+.section-header.comparison-h2 {
+  max-width: 600px;
 }
 
 .comparison-cell {
   display: flex;
   align-items: center;
+  padding: 24px 32px;
 }
 
 .comparison-label {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .comparison-label.manual {
-  color: #fca5a5;
+  color: var(--gray-500);
 }
 
 .comparison-label.cardsync {
-  color: #c4b5fd;
-}
-
-.feature-name {
-  font-size: 16px;
-  font-weight: 500;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.feature-icon-small {
-  font-size: 20px;
+  color: var(--purple-600);
 }
 
 .comparison-value {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--gray-600);
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
 }
 
 .comparison-value.manual-process {
-  color: rgba(252, 165, 165, 0.9);
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 8px;
+  color: var(--gray-500);
 }
 
 .comparison-value.automated {
-  color: rgba(196, 181, 253, 0.9);
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 8px;
+  color: var(--gray-700);
 }
 
 .check-icon-inline {
   width: 18px;
   height: 18px;
-  color: var(--green-500);
+  color: var(--purple-600);
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -932,14 +926,14 @@ body {
 .x-icon-inline {
   width: 18px;
   height: 18px;
-  color: #ef4444;
+  color: var(--gray-400);
   flex-shrink: 0;
   margin-top: 3px;
 }
 
 .time-estimate {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--gray-400);
   font-weight: 500;
 }
 
@@ -947,27 +941,27 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: center;
 }
 
 .calculator-input-inline label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--gray-400);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .calculator-input-inline input {
-  width: 140px;
-  padding: 12px 16px;
-  font-size: 24px;
+  width: 120px;
+  padding: 10px 14px;
+  font-size: 20px;
   font-weight: 600;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--gray-200);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: white;
+  color: var(--gray-900);
   text-align: center;
   transition: all 0.2s ease;
 }
@@ -975,13 +969,13 @@ body {
 .calculator-input-inline input:focus {
   outline: none;
   border-color: var(--purple-500);
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
 }
 
 .total-time {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .total-time strong {
@@ -990,44 +984,50 @@ body {
 }
 
 .total-time.manual strong {
-  color: #fca5a5;
+  color: var(--gray-500);
 }
 
 .total-time.automated strong {
-  color: var(--green-500);
+  color: var(--purple-600);
 }
 
 .time-label {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--gray-400);
   font-weight: 500;
 }
 
 .daily-calc {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--gray-400);
 }
 
 .comparison-savings-row {
   grid-column: 1 / -1;
-  background: rgba(147, 51, 234, 0.15);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(147, 51, 234, 0.08) 100%);
   padding: 32px 24px;
   text-align: center;
-  border-top: 1px solid rgba(147, 51, 234, 0.3);
+  border-top: 1px solid var(--gray-200);
 }
 
 .savings-highlight {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 40px;
+}
+
+.savings-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
 .savings-label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--gray-400);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -1035,7 +1035,7 @@ body {
 .savings-value {
   font-size: 36px;
   font-weight: 600;
-  color: var(--purple-400);
+  color: var(--purple-600);
 }
 
 .comparison-cta {
@@ -1045,12 +1045,12 @@ body {
 
 .comparison-subtitle {
   font-size: 19px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--gray-600);
   margin-bottom: 24px;
 }
 
 .comparison-subtitle strong {
-  color: white;
+  color: var(--gray-900);
   font-weight: 600;
 }
 
@@ -1196,7 +1196,7 @@ button[type="submit"]:disabled {
 }
 
 .faq-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -1430,6 +1430,7 @@ body.modal-open {
   position: absolute;
   top: 16px;
   right: 16px;
+  z-index: 2;
   width: 32px;
   height: 32px;
   display: flex;
@@ -1462,8 +1463,6 @@ body.modal-open {
 .modal-info {
   flex: 1;
   min-width: 0;
-  position: sticky;
-  top: 0;
   align-self: flex-start;
 }
 
@@ -1896,75 +1895,68 @@ body.modal-open {
   }
 
   .comparison-row {
-    display: none;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .comparison-row .comparison-cell:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .comparison-row .comparison-cell {
+    padding: 16px 24px;
   }
 
   .comparison-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(147, 51, 234, 0.1);
+    grid-template-columns: 1fr;
   }
 
   .comparison-footer .comparison-cell {
-    padding: 24px 20px;
+    padding: 20px 24px;
     justify-content: center;
   }
 
-
-  .comparison-footer .comparison-cell:nth-child(2),
-  .comparison-footer .comparison-cell:nth-child(3) {
-    display: none;
+  .comparison-footer .comparison-cell:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--gray-200);
   }
 
-  .calculator-input-inline {
+  .total-time {
     align-items: center;
-  }
-
-  .calculator-input-inline {
-    padding: 0;
-  }
-
-  .calculator-input-inline label {
-    font-size: 14px;
-  }
-
-  .calculator-input-inline input {
-    width: 100%;
-    max-width: 200px;
-  }
-
-  .total-time strong {
-    font-size: 32px;
   }
 
   .savings-highlight {
     flex-direction: column;
-    gap: 12px;
-    padding: 32px 20px;
-  }
-
-  .savings-label {
-    font-size: 14px;
+    gap: 24px;
+    padding: 24px 20px;
   }
 
   .savings-value {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .modal-overlay {
     padding: 0;
-    align-items: flex-end;
+    align-items: stretch;
   }
 
   .modal {
     max-width: 100%;
-    max-height: 90vh;
-    border-radius: 16px 16px 0 0;
-    padding: 32px 24px;
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
+    padding: 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal-close {
+    position: sticky;
+    top: 0;
+    right: auto;
+    margin-left: auto;
+    margin-bottom: -32px;
   }
 
   .modal-body {
