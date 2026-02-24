@@ -112,7 +112,7 @@ if (ordersInput) {
     clearAllErrors();
   }
 
-  // "I'm somewhere else" — transition to waitlist form
+  // "Somewhere else" card — transition to waitlist form
   document.getElementById('btn-other-country').addEventListener('click', () => {
     locationState.classList.add('hidden');
     formState.classList.remove('hidden');
@@ -154,13 +154,21 @@ if (ordersInput) {
   }
 
   function clearAllErrors() {
-    ['country', 'email'].forEach(clearError);
+    ['country', 'username', 'email', 'orders', 'shipping'].forEach(clearError);
   }
 
-  ['country', 'email'].forEach(field => {
+  ['country', 'username', 'email', 'orders', 'shipping'].forEach(field => {
     const input = document.getElementById('waitlist-' + field);
     if (input) input.addEventListener('input', () => clearError(field));
   });
+
+  // Strip non-digits from orders field
+  const ordersField = document.getElementById('waitlist-orders');
+  if (ordersField) {
+    ordersField.addEventListener('input', () => {
+      ordersField.value = ordersField.value.replace(/\D/g, '');
+    });
+  }
 
   // Form submit
   form.addEventListener('submit', async (e) => {
@@ -171,10 +179,10 @@ if (ordersInput) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const country = document.getElementById('waitlist-country').value.trim();
-    if (!country) {
-      showError('country', 'Please enter your country');
-      valid = false;
-    }
+    if (!country) { showError('country', 'Please enter your country'); valid = false; }
+
+    const username = document.getElementById('waitlist-username').value.trim();
+    if (!username) { showError('username', 'Please enter your Cardmarket username'); valid = false; }
 
     const email = document.getElementById('waitlist-email').value.trim();
     if (!email) {
@@ -184,6 +192,12 @@ if (ordersInput) {
       showError('email', 'Please enter a valid email address');
       valid = false;
     }
+
+    const orders = document.getElementById('waitlist-orders').value.trim();
+    if (!orders) { showError('orders', 'Please enter your monthly order volume'); valid = false; }
+
+    const shipping = document.getElementById('waitlist-shipping').value.trim();
+    if (!shipping) { showError('shipping', 'Please enter your shipping provider'); valid = false; }
 
     if (!valid) return;
 
@@ -196,7 +210,13 @@ if (ordersInput) {
       const response = await fetch('https://app.cardsync.eu/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ country, email })
+        body: JSON.stringify({
+          country,
+          cardmarket_username: username,
+          email,
+          orders_per_month: parseInt(orders),
+          shipping_provider: shipping
+        })
       });
 
       const data = await response.json();

@@ -450,12 +450,20 @@
       <!-- State 1: Location picker -->
       <div class="modal-body" id="modal-location-state">
         <div class="modal-info">
-          <h2 class="modal-header">CardSync is live in the Netherlands</h2>
-          <p class="modal-intro">We're rolling out to more countries soon. Where are you based?</p>
+          <h2 class="modal-header">Where are you based?</h2>
+          <p class="modal-intro">CardSync is currently live in the Netherlands. We're bringing it to more countries soon.</p>
         </div>
-        <div class="modal-location-btns">
-          <a href="https://app.cardsync.eu/#register" class="btn-primary btn-large btn-block">I'm in the Netherlands</a>
-          <button type="button" class="btn-secondary btn-large btn-block" id="btn-other-country">I'm somewhere else</button>
+        <div class="modal-location-cards">
+          <a href="http://localhost:3000/#register" class="modal-location-card">
+            <span class="location-flag">🇳🇱</span>
+            <strong>Netherlands</strong>
+            <span class="location-card-note">Get started free</span>
+          </a>
+          <button type="button" class="modal-location-card" id="btn-other-country">
+            <span class="location-flag">🌍</span>
+            <strong>Somewhere else</strong>
+            <span class="location-card-note">Join the waitlist</span>
+          </button>
         </div>
       </div>
 
@@ -472,9 +480,24 @@
             <span class="form-error" id="error-country"></span>
           </div>
           <div class="form-group">
+            <label for="waitlist-username">Cardmarket username</label>
+            <input type="text" id="waitlist-username" name="username" placeholder="Your Cardmarket username" autocomplete="off">
+            <span class="form-error" id="error-username"></span>
+          </div>
+          <div class="form-group">
             <label for="waitlist-email">Email address</label>
             <input type="email" id="waitlist-email" name="email" placeholder="you@example.com" autocomplete="email">
             <span class="form-error" id="error-email"></span>
+          </div>
+          <div class="form-group">
+            <label for="waitlist-orders">Orders per month</label>
+            <input type="text" inputmode="numeric" id="waitlist-orders" name="orders" placeholder="e.g. 200" autocomplete="off">
+            <span class="form-error" id="error-orders"></span>
+          </div>
+          <div class="form-group">
+            <label for="waitlist-shipping">Shipping provider</label>
+            <input type="text" id="waitlist-shipping" name="shipping" placeholder="e.g. PostNL, MyParcel, DHL" autocomplete="off">
+            <span class="form-error" id="error-shipping"></span>
           </div>
           <button type="submit" class="btn-primary btn-large btn-block">Notify me when it's available</button>
           <p class="modal-legal">By joining, you agree to our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>.</p>
