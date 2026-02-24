@@ -1481,6 +1481,13 @@ body.modal-open {
   margin-bottom: 0;
 }
 
+.modal-location-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
 .modal-form {
   display: flex;
   flex-direction: column;

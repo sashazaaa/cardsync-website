@@ -24,7 +24,7 @@
       </div>
       <div class="nav-right">
         <a href="https://app.cardsync.eu" class="nav-link">Dashboard</a>
-        <button class="btn-primary btn-waitlist">Get Early Access</button>
+        <button class="btn-primary btn-waitlist">Get started free</button>
       </div>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
         <span></span>
@@ -36,7 +36,7 @@
 
   <div class="mobile-menu" id="mobile-menu">
     <a href="https://app.cardsync.eu" class="mobile-menu-link">Dashboard</a>
-    <button class="btn-primary btn-waitlist mobile-menu-cta">Get Early Access</button>
+    <button class="btn-primary btn-waitlist mobile-menu-cta">Get started free</button>
   </div>
 
   <!-- Hero Section -->
@@ -51,14 +51,14 @@
       </p>
       <div class="hero-cta">
         <button class="btn-primary btn-large btn-waitlist">
-          Get Early Access
+          Get started free
           <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor">
             <path d="M5.5 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
         <p class="cta-note">
           <span class="badge-dot-inline"></span>
-          Closed beta · Live in the Netherlands
+          Open beta · Live in the Netherlands
         </p>
       </div>
       <div class="hero-image">
@@ -128,7 +128,7 @@
     <div class="supported-container">
       <div class="section-header">
         <h2>Live in the Netherlands.</h2>
-        <p>CardSync is currently in closed beta. We’re onboarding sellers gradually to ensure a smooth experience. More carriers and regions coming soon.</p>
+        <p>CardSync is live and free to use for Dutch sellers. More carriers and regions are coming soon.</p>
       </div>
 
       <div class="carriers-grid">
@@ -288,7 +288,7 @@
 
       <div class="comparison-cta">
         <p class="comparison-subtitle">Save <strong>80% of your shipping time.</strong> Without changing how you already ship.</p>
-        <button class="btn-primary btn-large btn-waitlist">Get Early Access</button>
+        <button class="btn-primary btn-large btn-waitlist">Get started free</button>
       </div>
     </div>
   </section>
@@ -352,7 +352,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>During closed beta, CardSync is completely free. When we officially launch, we'll determine pricing but it will likely be a flat rate model with unlimited usage — no per-order fees or surprise charges.</p>
+              <p>CardSync is completely free right now. If we introduce paid plans in the future, all existing users will be notified well in advance and any upgrade will be entirely opt-in — you'll never be charged without actively choosing to do so.</p>
             </div>
           </div>
         </div>
@@ -373,14 +373,14 @@
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>What happens during the closed beta period?</span>
+            <span>Is CardSync finished, or is it still being developed?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 6l4 4 4-4"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Closed beta users get free access to CardSync while we refine the product based on your feedback. You'll have direct communication with our team and help shape the features we build next. We're currently focused on Netherlands-based sellers before expanding to other EU countries.</p>
+              <p>CardSync is live and working, but still in active development. We're continuously improving the product and expanding to more countries. As an early user, you'll have direct access to us — your feedback genuinely shapes what we build next.</p>
             </div>
           </div>
         </div>
@@ -415,7 +415,7 @@
         <p class="footer-tagline">Cardmarket shipping, simplified</p>
       </div>
       <div class="footer-right">
-        <button class="btn-primary btn-waitlist">Get Early Access</button>
+        <button class="btn-primary btn-waitlist">Get started free</button>
         <div class="footer-links">
           <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
           <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>
@@ -433,7 +433,7 @@
           EU Hosted
         </span>
       </div>
-      <p class="footer-beta-note">CardSync is an early-stage project currently in closed beta.</p>
+      <p class="footer-beta-note">CardSync is currently in open beta.</p>
       <p>&copy; 2026 CardSync. All rights reserved.</p>
     </div>
   </footer>
@@ -447,59 +447,41 @@
         </svg>
       </button>
 
-      <div class="modal-body" id="modal-form-state">
+      <!-- State 1: Location picker -->
+      <div class="modal-body" id="modal-location-state">
         <div class="modal-info">
-          <h2 class="modal-header">Get early access</h2>
-          <p class="modal-intro">CardSync is currently in closed beta. We're onboarding sellers gradually — leave your details and we'll reach out when it's your turn.</p>
+          <h2 class="modal-header">CardSync is live in the Netherlands</h2>
+          <p class="modal-intro">We're rolling out to more countries soon. Where are you based?</p>
         </div>
+        <div class="modal-location-btns">
+          <a href="https://app.cardsync.eu/#register" class="btn-primary btn-large btn-block">I'm in the Netherlands</a>
+          <button type="button" class="btn-secondary btn-large btn-block" id="btn-other-country">I'm somewhere else</button>
+        </div>
+      </div>
 
+      <!-- State 2: Waitlist form (non-NL) -->
+      <div class="modal-body hidden" id="modal-form-state">
+        <div class="modal-info">
+          <h2 class="modal-header">Join the waitlist</h2>
+          <p class="modal-intro">We'll let you know as soon as CardSync launches in your country.</p>
+        </div>
         <form class="modal-form" id="waitlist-form" novalidate>
           <div class="form-group">
-            <label for="waitlist-country">Country</label>
-            <div class="country-select" id="country-select">
-              <button type="button" class="country-select-trigger" id="country-trigger">
-                <span id="country-value">Netherlands</span>
-                <svg class="country-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 6l4 4 4-4"/>
-                </svg>
-              </button>
-              <div class="country-dropdown" id="country-dropdown">
-                <input type="text" class="country-search" id="country-search" placeholder="Search countries...">
-                <ul class="country-list" id="country-list"></ul>
-              </div>
-            </div>
+            <label for="waitlist-country">Your country</label>
+            <input type="text" id="waitlist-country" name="country" placeholder="e.g. Germany, Belgium…" autocomplete="country-name">
             <span class="form-error" id="error-country"></span>
           </div>
-
-          <div class="form-group">
-            <label for="waitlist-username">Cardmarket username</label>
-            <input type="text" id="waitlist-username" name="username" placeholder="Your Cardmarket username" autocomplete="off">
-            <span class="form-error" id="error-username"></span>
-          </div>
-
           <div class="form-group">
             <label for="waitlist-email">Email address</label>
             <input type="email" id="waitlist-email" name="email" placeholder="you@example.com" autocomplete="email">
             <span class="form-error" id="error-email"></span>
           </div>
-
-          <div class="form-group">
-            <label for="waitlist-orders">Orders per month</label>
-            <input type="text" inputmode="numeric" id="waitlist-orders" name="orders" placeholder="e.g. 200" autocomplete="off">
-            <span class="form-error" id="error-orders"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="waitlist-shipping">Shipping provider</label>
-            <input type="text" id="waitlist-shipping" name="shipping" placeholder="e.g. PostNL, MyParcel, DHL" autocomplete="off">
-            <span class="form-error" id="error-shipping"></span>
-          </div>
-
-          <button type="submit" class="btn-primary btn-large btn-block">Get Early Access</button>
+          <button type="submit" class="btn-primary btn-large btn-block">Notify me when it's available</button>
           <p class="modal-legal">By joining, you agree to our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>.</p>
         </form>
       </div>
 
+      <!-- State 3: Success -->
       <div class="modal-success" id="modal-success-state">
         <div class="success-checkmark">
           <svg viewBox="0 0 52 52" fill="none">
@@ -508,7 +490,7 @@
           </svg>
         </div>
         <h2 class="modal-header">You're on the list!</h2>
-        <p class="modal-intro">Thanks for signing up. We'll reach out when it's your turn to get started with CardSync.</p>
+        <p class="modal-intro">We'll reach out as soon as CardSync launches in your country.</p>
       </div>
     </div>
   </div>

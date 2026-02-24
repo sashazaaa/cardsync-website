@@ -88,84 +88,12 @@ if (ordersInput) {
 (function () {
   const overlay = document.getElementById('waitlist-modal');
   const closeBtn = document.getElementById('modal-close');
+  const locationState = document.getElementById('modal-location-state');
   const formState = document.getElementById('modal-form-state');
   const successState = document.getElementById('modal-success-state');
   const form = document.getElementById('waitlist-form');
 
-  // Country dropdown elements
-  const countrySelect = document.getElementById('country-select');
-  const countryTrigger = document.getElementById('country-trigger');
-  const countryValue = document.getElementById('country-value');
-  const countryDropdown = document.getElementById('country-dropdown');
-  const countrySearch = document.getElementById('country-search');
-  const countryList = document.getElementById('country-list');
-
-  const countries = [
-    'Albania', 'Andorra', 'Austria', 'Belarus', 'Belgium',
-    'Bosnia and Herzegovina', 'Bulgaria', 'Croatia', 'Cyprus', 'Czech Republic',
-    'Denmark', 'Estonia', 'Finland', 'France', 'Germany',
-    'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy',
-    'Kosovo', 'Latvia', 'Liechtenstein', 'Lithuania', 'Luxembourg',
-    'Malta', 'Moldova', 'Monaco', 'Montenegro', 'Netherlands',
-    'North Macedonia', 'Norway', 'Poland', 'Portugal', 'Romania',
-    'Russia', 'San Marino', 'Serbia', 'Slovakia', 'Slovenia',
-    'Spain', 'Sweden', 'Switzerland', 'Turkey', 'Ukraine',
-    'United Kingdom', 'Vatican City'
-  ];
-
-  let selectedCountry = 'Netherlands';
-
-  // Build country list
-  function renderCountryList(filter) {
-    const query = (filter || '').toLowerCase();
-    const filtered = countries.filter(c => c.toLowerCase().includes(query));
-    countryList.innerHTML = '';
-    filtered.forEach(country => {
-      const li = document.createElement('li');
-      li.textContent = country;
-      li.setAttribute('role', 'option');
-      if (country === selectedCountry) li.classList.add('selected');
-      li.addEventListener('click', () => {
-        selectedCountry = country;
-        countryValue.textContent = country;
-        closeCountryDropdown();
-        clearError('country');
-      });
-      countryList.appendChild(li);
-    });
-  }
-
-  function openCountryDropdown() {
-    countrySelect.classList.add('open');
-    countrySearch.value = '';
-    renderCountryList('');
-    setTimeout(() => countrySearch.focus(), 0);
-  }
-
-  function closeCountryDropdown() {
-    countrySelect.classList.remove('open');
-  }
-
-  countryTrigger.addEventListener('click', () => {
-    if (countrySelect.classList.contains('open')) {
-      closeCountryDropdown();
-    } else {
-      openCountryDropdown();
-    }
-  });
-
-  countrySearch.addEventListener('input', () => {
-    renderCountryList(countrySearch.value);
-  });
-
-  // Close country dropdown when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!countrySelect.contains(e.target)) {
-      closeCountryDropdown();
-    }
-  });
-
-  // Modal open / close
+  // Modal open / close / reset
   function openModal() {
     overlay.classList.add('active');
     document.body.classList.add('modal-open');
@@ -178,13 +106,20 @@ if (ordersInput) {
 
   function resetModal() {
     form.reset();
-    selectedCountry = 'Netherlands';
-    countryValue.textContent = 'Netherlands';
-    formState.classList.remove('hidden');
+    locationState.classList.remove('hidden');
+    formState.classList.add('hidden');
     successState.classList.remove('active');
     clearAllErrors();
   }
 
+  // "I'm somewhere else" — transition to waitlist form
+  document.getElementById('btn-other-country').addEventListener('click', () => {
+    locationState.classList.add('hidden');
+    formState.classList.remove('hidden');
+    document.getElementById('waitlist-country').focus();
+  });
+
+  // Open modal on all CTA buttons
   document.querySelectorAll('.btn-waitlist').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -200,54 +135,32 @@ if (ordersInput) {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && overlay.classList.contains('active')) {
-      closeModal();
-    }
+    if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
   });
 
   // Validation helpers
   function showError(field, message) {
     const errorEl = document.getElementById('error-' + field);
     if (errorEl) errorEl.textContent = message;
-    // Add error class to input
-    if (field === 'country') {
-      countryTrigger.classList.add('error');
-    } else {
-      const input = document.getElementById('waitlist-' + field);
-      if (input) input.classList.add('error');
-    }
+    const input = document.getElementById('waitlist-' + field);
+    if (input) input.classList.add('error');
   }
 
   function clearError(field) {
     const errorEl = document.getElementById('error-' + field);
     if (errorEl) errorEl.textContent = '';
-    if (field === 'country') {
-      countryTrigger.classList.remove('error');
-    } else {
-      const input = document.getElementById('waitlist-' + field);
-      if (input) input.classList.remove('error');
-    }
+    const input = document.getElementById('waitlist-' + field);
+    if (input) input.classList.remove('error');
   }
 
   function clearAllErrors() {
-    ['country', 'username', 'email', 'orders', 'shipping'].forEach(clearError);
+    ['country', 'email'].forEach(clearError);
   }
 
-  // Clear error on input
-  ['username', 'email', 'orders', 'shipping'].forEach(field => {
+  ['country', 'email'].forEach(field => {
     const input = document.getElementById('waitlist-' + field);
-    if (input) {
-      input.addEventListener('input', () => clearError(field));
-    }
+    if (input) input.addEventListener('input', () => clearError(field));
   });
-
-  // Strip non-digits from orders field
-  const ordersField = document.getElementById('waitlist-orders');
-  if (ordersField) {
-    ordersField.addEventListener('input', () => {
-      ordersField.value = ordersField.value.replace(/\D/g, '');
-    });
-  }
 
   // Form submit
   form.addEventListener('submit', async (e) => {
@@ -255,20 +168,15 @@ if (ordersInput) {
     clearAllErrors();
 
     let valid = true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!selectedCountry) {
-      showError('country', 'Please select a country');
-      valid = false;
-    }
-
-    const username = document.getElementById('waitlist-username').value.trim();
-    if (!username) {
-      showError('username', 'Please enter your Cardmarket username');
+    const country = document.getElementById('waitlist-country').value.trim();
+    if (!country) {
+      showError('country', 'Please enter your country');
       valid = false;
     }
 
     const email = document.getElementById('waitlist-email').value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) {
       showError('email', 'Please enter your email address');
       valid = false;
@@ -277,48 +185,23 @@ if (ordersInput) {
       valid = false;
     }
 
-    const orders = document.getElementById('waitlist-orders').value.trim();
-    if (!orders) {
-      showError('orders', 'Please enter your monthly order volume');
-      valid = false;
-    }
-
-    const shipping = document.getElementById('waitlist-shipping').value.trim();
-    if (!shipping) {
-      showError('shipping', 'Please enter your shipping provider');
-      valid = false;
-    }
-
     if (!valid) return;
-
-    // Submit to backend API
-    const API_URL = 'https://app.cardsync.eu/api/waitlist';
 
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
+    submitBtn.textContent = 'Submitting…';
 
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch('https://app.cardsync.eu/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          country: selectedCountry,
-          cardmarket_username: username,
-          email,
-          orders_per_month: parseInt(orders),
-          shipping_provider: shipping
-        })
+        body: JSON.stringify({ country, email })
       });
 
       const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Something went wrong');
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong');
-      }
-
-      // Show success state
       formState.classList.add('hidden');
       successState.classList.add('active');
     } catch (err) {
