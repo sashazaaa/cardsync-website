@@ -179,7 +179,6 @@
 
       <div class="comparison-table">
         <div class="comparison-header">
-          <div class="comparison-cell"></div>
           <div class="comparison-cell">
             <div class="comparison-label manual">Manually today</div>
           </div>
@@ -189,10 +188,6 @@
         </div>
 
         <div class="comparison-row">
-          <div class="comparison-cell feature-name">
-            <span class="feature-icon-small">📋</span>
-            Get order details
-          </div>
           <div class="comparison-cell">
             <div class="comparison-value manual-process">
               <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -212,10 +207,6 @@
         </div>
 
         <div class="comparison-row">
-          <div class="comparison-cell feature-name">
-            <span class="feature-icon-small">📦</span>
-            Buy shipping labels
-          </div>
           <div class="comparison-cell">
             <div class="comparison-value manual-process">
               <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -235,10 +226,6 @@
         </div>
 
         <div class="comparison-row">
-          <div class="comparison-cell feature-name">
-            <span class="feature-icon-small">🔢</span>
-            Update tracking codes
-          </div>
           <div class="comparison-cell">
             <div class="comparison-value manual-process">
               <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -259,12 +246,6 @@
 
         <div class="comparison-footer">
           <div class="comparison-cell">
-            <div class="calculator-input-inline">
-              <label for="orders-input">Your monthly orders:</label>
-              <input type="number" id="orders-input" value="500" min="1" max="10000">
-            </div>
-          </div>
-          <div class="comparison-cell">
             <div class="total-time manual">
               <strong id="manual-time">~20.8 hours</strong>
               <span class="time-label">manual work per month</span>
@@ -280,8 +261,14 @@
 
         <div class="comparison-savings-row">
           <div class="savings-highlight">
-            <span class="savings-label">You save</span>
-            <span class="savings-value" id="hours-saved-month">~19.4 hours/month</span>
+            <div class="calculator-input-inline">
+              <label for="orders-input">Monthly orders:</label>
+              <input type="number" id="orders-input" value="500" min="1" max="10000">
+            </div>
+            <div class="savings-result">
+              <span class="savings-label">You save</span>
+              <span class="savings-value" id="hours-saved-month">~19.4 hours/month</span>
+            </div>
           </div>
         </div>
       </div>
