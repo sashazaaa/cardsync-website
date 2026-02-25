@@ -75,7 +75,7 @@ function calculateSavings() {
     cardsyncTime.textContent = `~${cardsyncHours} hours`;
   }
   if (hoursSavedMonth) {
-    hoursSavedMonth.textContent = `~${savedHours} hours/month`;
+    hoursSavedMonth.textContent = `~${savedHours} hrs/mo`;
   }
 }
 
