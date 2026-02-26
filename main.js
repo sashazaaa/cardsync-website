@@ -55,26 +55,26 @@ const manualTime = document.getElementById('manual-time');
 const cardsyncTime = document.getElementById('cardsync-time');
 const hoursSavedMonth = document.getElementById('hours-saved-month');
 
+function formatTime(minutes) {
+  if (minutes < 60) return `~${Math.round(minutes)} min`;
+  return `~${(minutes / 60).toFixed(1)} hours`;
+}
+
 function calculateSavings() {
   const orders = parseInt(ordersInput.value) || 0;
 
-  // 2 minutes manual vs 10 seconds with CardSync
+  // Manual: ~2 minutes per order (copy address, create shipment, paste tracking)
   const manualMinutes = orders * 2;
-  const cardsyncMinutes = orders * (10 / 60); // 10 seconds per order
+
+  // CardSync: ~4 seconds per order (sync click) + ~2 min fixed (export + carrier import)
+  const cardsyncMinutes = (orders * (4 / 60)) + 2;
+
   const savedMinutes = manualMinutes - cardsyncMinutes;
 
-  const manualHours = (manualMinutes / 60).toFixed(1);
-  const cardsyncHours = (cardsyncMinutes / 60).toFixed(1);
-  const savedHours = (savedMinutes / 60).toFixed(1);
-
-  // Update displays
-  if (manualTime) {
-    manualTime.textContent = `~${manualHours} hours`;
-  }
-  if (cardsyncTime) {
-    cardsyncTime.textContent = `~${cardsyncHours} hours`;
-  }
+  if (manualTime) manualTime.textContent = formatTime(manualMinutes);
+  if (cardsyncTime) cardsyncTime.textContent = formatTime(cardsyncMinutes);
   if (hoursSavedMonth) {
+    const savedHours = (savedMinutes / 60).toFixed(1);
     hoursSavedMonth.textContent = `~${savedHours} hrs/mo`;
   }
 }
