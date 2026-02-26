@@ -63,8 +63,8 @@ function formatTime(minutes) {
 function calculateSavings() {
   const orders = parseInt(ordersInput.value) || 0;
 
-  // Manual: ~2 minutes per order (copy address, create shipment, paste tracking)
-  const manualMinutes = orders * 2;
+  // Manual: ~1.5 minutes per order (copy address, create shipment, paste tracking)
+  const manualMinutes = orders * 1.5;
 
   // CardSync: ~4 seconds per order (sync click) + ~2 min fixed (export + carrier import)
   const cardsyncMinutes = (orders * (4 / 60)) + 2;
