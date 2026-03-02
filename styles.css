@@ -1946,8 +1946,7 @@ body.modal-open {
   }
 
   .comparison-row {
-    grid-template-columns: 1fr;
-    gap: 0;
+    display: none;
   }
 
   .comparison-row .comparison-cell:first-child {
