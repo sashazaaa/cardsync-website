@@ -32,8 +32,13 @@
         </div>
       </div>
       <div class="nav-right">
-        <a href="https://app.cardsync.eu" class="nav-link">Dashboard</a>
-        <button class="btn-primary btn-waitlist">Sign up</button>
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="de">DE</button>
+        </div>
+        <a href="https://app.cardsync.eu" class="nav-link" data-i18n="nav_login">Log in</a>
+        <button class="btn-primary btn-waitlist"><span data-i18n="nav_signup">Sign up</span></button>
       </div>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
         <span></span>
@@ -44,30 +49,28 @@
   </nav>
 
   <div class="mobile-menu" id="mobile-menu">
-    <a href="https://app.cardsync.eu" class="mobile-menu-link">Dashboard</a>
-    <button class="btn-primary btn-waitlist mobile-menu-cta">Sign up</button>
+    <a href="https://app.cardsync.eu" class="mobile-menu-link" data-i18n="nav_login">Log in</a>
+    <button class="btn-primary btn-waitlist mobile-menu-cta" data-i18n="nav_signup">Sign up</button>
   </div>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-container">
-      <h1 class="hero-title">
-        Cardmarket shipping,<br>
-        <span class="gradient-text">simplified</span>
+      <h1 class="hero-title" data-i18n="hero_title">
+        Ship Cardmarket orders in minutes, not hours
       </h1>
-      <p class="hero-subtitle">
-        No more copy-pasting between Cardmarket and your shipping provider. Sync addresses, buy labels in bulk, and push tracking codes back automatically — without changing how you already ship.
+      <p class="hero-subtitle" data-i18n="hero_subtitle">
+        Generate shipping labels in bulk and sync tracking codes back automatically — no more copy-pasting between Cardmarket and your shipping provider.
       </p>
       <div class="hero-cta">
         <button class="btn-primary btn-large btn-waitlist">
-          Sign up
+          <span data-i18n="hero_cta">Start shipping faster</span>
           <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor">
             <path d="M5.5 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-        <p class="cta-note">
-          <span class="badge-dot-inline"></span>
-          Open beta · Live in the Netherlands
+        <p class="cta-note" data-i18n="hero_note">
+          Trusted by professional Cardmarket sellers
         </p>
       </div>
       <div class="hero-image">
@@ -87,20 +90,54 @@
   </section>
 
 
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <p class="testimonial-headline" data-i18n="test1_headline">30–60 orders shipped in under 5 minutes</p>
+        <blockquote class="testimonial-quote">We process 30–60 tracked orders a day. With CardSync it takes less than 5 minutes to generate all shipping labels and sync tracking codes back to Cardmarket. No more copy-pasting or creating labels one by one. Huge quality-of-life improvement.</blockquote>
+        <div class="testimonial-author">
+          <img src="images/seller-goat-enterprise.png" alt="Goat Enterprise" class="testimonial-avatar">
+          <div>
+            <span class="testimonial-name">Goat Enterprise</span>
+            <span class="testimonial-meta">
+              <img src="images/powerseller.svg" alt="Powerseller" class="testimonial-cm-badge">
+              · Powerseller · 100K+ sales
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-headline" data-i18n="test2_headline">A lifesaver during pre-sales and new releases</p>
+        <blockquote class="testimonial-quote">Creating tracked shipments normally means copying and pasting between systems. CardSync removes all of that and makes the workflow much smoother. It's also a lifesaver during pre-sales or new releases when dozens of orders come in at once.</blockquote>
+        <div class="testimonial-author">
+          <img src="images/seller-dekartonnen-kwaak.png" alt="DeKartonnenKwaak" class="testimonial-avatar">
+          <div>
+            <span class="testimonial-name">DeKartonnenKwaak</span>
+            <span class="testimonial-meta">
+              <img src="images/professional.svg" alt="Professional" class="testimonial-cm-badge">
+              · Professional · 45K+ sales
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
     <!-- How it works -->
     <section class="how-it-works">
       <div class="how-it-works-container">
         <div class="section-header">
-          <h2>Your same workflow,<br>streamlined</h2>
-          <p>CardSync doesn't change your workflow. Our Chrome extension and dashboard simply removes all the manual steps between Cardmarket and your shipping provider.</p>
+          <h2 data-i18n="how_title">Your Cardmarket workflow, without the work</h2>
+          <p data-i18n="how_subtitle">CardSync removes all the manual steps between Cardmarket and your shipping provider.</p>
         </div>
   
         <div class="showcase-stack">
           <div class="showcase-card">
             <div class="showcase-card-content">
-              <span class="feature-label">Step 1</span>
-              <h3>Sync orders</h3>
-              <p>Our Chrome extension adds a button to Cardmarket order pages. One click syncs the address and shipping details to CardSync.</p>
+              <span class="feature-label" data-i18n="step1_label">Step 1</span>
+              <h3 data-i18n="step1_title">Sync orders</h3>
+              <p data-i18n="step1_desc">Our Chrome extension adds a button to Cardmarket order pages. One click syncs the address and shipping details to CardSync.</p>
             </div>
             <div class="showcase-card-image">
               <img src="images/step-1.png" alt="CardSync Chrome extension on Cardmarket">
@@ -109,9 +146,9 @@
 
           <div class="showcase-card reverse">
             <div class="showcase-card-content">
-              <span class="feature-label">Step 2</span>
-              <h3>Create labels in bulk</h3>
-              <p>Manage orders in the CardSync dashboard. Export to MyParcel or PostNL and buy all your labels at once.</p>
+              <span class="feature-label" data-i18n="step2_label">Step 2</span>
+              <h3 data-i18n="step2_title">Create labels in bulk</h3>
+              <p data-i18n="step2_desc">Manage orders in the CardSync dashboard. Export to MyParcel or PostNL and buy all your labels at once.</p>
             </div>
             <div class="showcase-card-image">
               <img src="images/step-2.png" alt="CardSync dashboard with bulk export">
@@ -120,9 +157,9 @@
 
           <div class="showcase-card">
             <div class="showcase-card-content">
-              <span class="feature-label">Step 3</span>
-              <h3>Sync tracking</h3>
-              <p>Cardsync automatically syncs tracking codes from your shipping provider. Add them to Cardmarket with one click.</p>
+              <span class="feature-label" data-i18n="step3_label">Step 3</span>
+              <h3 data-i18n="step3_title">Sync tracking</h3>
+              <p data-i18n="step3_desc">CardSync automatically syncs tracking codes from your shipping provider. Add them to Cardmarket with one click.</p>
             </div>
             <div class="showcase-card-image">
               <img src="images/step-3.png" alt="Import tracking codes to CardSync">
@@ -136,8 +173,7 @@
   <section class="supported">
     <div class="supported-container">
       <div class="section-header">
-        <h2>Live in the Netherlands.</h2>
-        <p>CardSync is live and free to use for Dutch sellers. More countries and carriers are coming soon.</p>
+        <h2 data-i18n-html="sup_title">Live in the Netherlands.<br>Germany coming next.</h2>
       </div>
 
 
@@ -158,7 +194,7 @@
         <!-- Coming Soon Carriers -->
         <div class="carrier-card coming-soon">
           <div class="carrier-logo">
-            <img src="images/SendCloud.png" alt="Sendcloud">
+            <img src="images/deutsche-post-logo.webp" alt="Deutsche Post">
           </div>
           <div class="carrier-badge">Coming soon</div>
         </div>
@@ -172,7 +208,7 @@
       </div>
 
       <div class="supported-footer">
-        <p>Want CardSync in your country? <a href="#" class="btn-waitlist">Join the waitlist</a> and we'll let you know when it launches.</p>
+        <p data-i18n="sup_footer">🇩🇪 German Cardmarket seller? Help us launch in Germany. Early testers get free access for life.</p><p><a href="#" class="btn-waitlist" data-i18n="sup_cta">Get early access</a></p>
       </div>
 
 
@@ -185,36 +221,17 @@
   <section class="comparison" id="pricing">
     <div class="comparison-container">
       <div class="section-header">
-        <h2>How much time are you spending on shipping?</h2>
-        <p>See how much manual time CardSync removes from your monthly shipping workflow, without changing how you already ship.</p>
+        <h2 data-i18n="comp_title">How much time are you wasting on shipping?</h2>
+        <p data-i18n="comp_subtitle">See how much manual time CardSync removes from your monthly shipping workflow, without changing how you already ship.</p>
       </div>
 
       <div class="comparison-table">
         <div class="comparison-header">
           <div class="comparison-cell">
-            <div class="comparison-label manual">Manually today</div>
+            <div class="comparison-label manual" data-i18n="comp_manual_label">Manually today</div>
           </div>
           <div class="comparison-cell">
-            <div class="comparison-label cardsync">With CardSync</div>
-          </div>
-        </div>
-
-        <div class="comparison-row">
-          <div class="comparison-cell">
-            <div class="comparison-value manual-process">
-              <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M4 4l8 8M12 4l-8 8"/>
-              </svg>
-              Manually copy-paste each buyer's address
-            </div>
-          </div>
-          <div class="comparison-cell">
-            <div class="comparison-value automated">
-              <svg class="check-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M3 8l3 3 7-7"/>
-              </svg>
-              Sync full address details with one click
-            </div>
+            <div class="comparison-label cardsync" data-i18n="comp_cs_label">With CardSync</div>
           </div>
         </div>
 
@@ -224,7 +241,7 @@
               <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M4 4l8 8M12 4l-8 8"/>
               </svg>
-              Buy labels one by one on the carrier website
+              <span data-i18n="comp_r1m">Manually copy each buyer's address</span>
             </div>
           </div>
           <div class="comparison-cell">
@@ -232,7 +249,7 @@
               <svg class="check-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M3 8l3 3 7-7"/>
               </svg>
-              Export orders and buy labels in bulk
+              <span data-i18n="comp_r1c">Sync address details with one click</span>
             </div>
           </div>
         </div>
@@ -243,7 +260,7 @@
               <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M4 4l8 8M12 4l-8 8"/>
               </svg>
-              Copy-paste tracking codes back into Cardmarket
+              <span data-i18n="comp_r2m">Create shipping labels one by one</span>
             </div>
           </div>
           <div class="comparison-cell">
@@ -251,7 +268,26 @@
               <svg class="check-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M3 8l3 3 7-7"/>
               </svg>
-              Import and match tracking codes automatically
+              <span data-i18n="comp_r2c">Generate shipping labels in bulk</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">
+            <div class="comparison-value manual-process">
+              <svg class="x-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M4 4l8 8M12 4l-8 8"/>
+              </svg>
+              <span data-i18n="comp_r3m">Paste tracking codes back into Cardmarket</span>
+            </div>
+          </div>
+          <div class="comparison-cell">
+            <div class="comparison-value automated">
+              <svg class="check-icon-inline" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M3 8l3 3 7-7"/>
+              </svg>
+              <span data-i18n="comp_r3c">Sync tracking codes automatically</span>
             </div>
           </div>
         </div>
@@ -260,13 +296,13 @@
           <div class="comparison-cell">
             <div class="total-time manual">
               <strong id="manual-time">~20.8 hours</strong>
-              <span class="time-label">manual work per month</span>
+              <span class="time-label" data-i18n="comp_manual_per_month">manual work per month</span>
             </div>
           </div>
           <div class="comparison-cell">
             <div class="total-time automated">
               <strong id="cardsync-time">~1.4 hours</strong>
-              <span class="time-label">with CardSync</span>
+              <span class="time-label" data-i18n="comp_with_cs">with CardSync</span>
             </div>
           </div>
         </div>
@@ -274,14 +310,14 @@
         <div class="comparison-savings-row">
           <div class="savings-highlight">
             <div class="calculator-input-inline">
-              <label for="orders-input">Monthly orders:</label>
+              <label for="orders-input" data-i18n="comp_monthly_label">Monthly orders:</label>
               <input type="number" id="orders-input" value="500" min="1" max="10000">
             </div>
             <div class="savings-result">
-              <span class="savings-label">You save</span>
-              <span class="savings-value" id="hours-saved-month">~19.4 hrs/mo</span>
+              <span class="savings-label" data-i18n="comp_you_save">You save</span>
+              <span class="savings-value" id="hours-saved-month">~19.4 every month</span>
             </div>
-            <button class="btn-primary btn-large btn-waitlist">Sign up</button>
+            <button class="btn-primary btn-large btn-waitlist" data-i18n="comp_cta">Start saving hours</button>
           </div>
         </div>
       </div>
@@ -293,104 +329,104 @@
   <section class="faq">
     <div class="faq-container">
       <div class="section-header">
-        <h2>Frequently asked questions</h2>
+        <h2 data-i18n="faq_title">Frequently asked questions</h2>
       </div>
 
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question">
-            <span>How does CardSync work with my existing workflow?</span>
+            <span data-i18n="faq1q">How does CardSync fit with my existing workflow?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 6l4 4 4-4"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>CardSync integrates seamlessly with Cardmarket and your shipping provider. You continue using the same platforms you already know - CardSync just automates the copying and pasting between them. Install our Chrome extension, and you'll see sync buttons directly on Cardmarket order pages.</p>
+              <p data-i18n="faq1a">CardSync integrates seamlessly with Cardmarket and your shipping provider. You continue using the same platforms you already know - CardSync just automates the copying and pasting between them. Install our Chrome extension, and you'll see sync buttons directly on Cardmarket order pages.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>Which shipping providers do you support?</span>
+            <span data-i18n="faq2q">Which shipping providers do you support?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 6l4 4 4-4"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>We currently support MyParcel and PostNL for Netherlands-based sellers. We're actively adding support for Sendcloud and DHL, with more carriers coming based on user demand. If you use a specific carrier, let us know when you sign up!</p>
+              <p data-i18n="faq2a">We currently support MyParcel and PostNL for Netherlands-based sellers. We're actively adding support for Sendcloud and DHL, with more carriers coming based on user demand. If you use a specific carrier, let us know when you sign up!</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>Is my customer data secure?</span>
+            <span data-i18n="faq3q">Is my customer data secure?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 6l4 4 4-4"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Absolutely. Buyer addresses are stored only long enough to generate your shipping labels and are automatically deleted once you mark an order as shipped. We don't use tracking cookies, don't share data with third parties, and all data is hosted in the EU. CardSync is GDPR compliant by design. Read our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> for full details.</p>
+              <p data-i18n-html="faq3a">Absolutely. Buyer addresses are stored only long enough to generate your shipping labels and are automatically deleted once you mark an order as shipped. We don't use tracking cookies, don't share data with third parties, and all data is hosted in the EU. CardSync is GDPR compliant by design. Read our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> for full details.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>How much does CardSync cost?</span>
+            <span data-i18n="faq4q">How much does CardSync cost?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 6l4 4 4-4"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>CardSync is completely free right now. If we introduce paid plans in the future, all existing users will be notified well in advance and any upgrade will be entirely opt-in — you'll never be charged without actively choosing to do so.</p>
+              <p data-i18n="faq4a">CardSync is completely free right now. If we introduce paid plans in the future, all existing users will be notified well in advance and any upgrade will be entirely opt-in — you'll never be charged without actively choosing to do so.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>Do I need technical knowledge to use CardSync?</span>
+            <span data-i18n="faq5q">Do I need technical knowledge to use CardSync?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 6l4 4 4-4"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>No technical knowledge required! If you can use Cardmarket and your shipping provider's website, you can use CardSync. The Chrome extension adds simple "Sync" buttons to your workflow - just click and go. Setup takes less than 5 minutes.</p>
+              <p data-i18n="faq5a">No technical knowledge required! If you can use Cardmarket and your shipping provider's website, you can use CardSync. The Chrome extension adds simple "Sync" buttons to your workflow - just click and go. Setup takes less than 5 minutes.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>Is CardSync finished, or is it still being developed?</span>
+            <span data-i18n="faq6q">Is CardSync finished, or is it still being developed?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 6l4 4 4-4"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>CardSync is live and working, but still in active development. We're continuously improving the product and expanding to more countries. As an early user, you'll have direct access to us — your feedback genuinely shapes what we build next.</p>
+              <p data-i18n="faq6a">CardSync is live and working, but still in active development. We're continuously improving the product and expanding to more countries. As an early user, you'll have direct access to us — your feedback genuinely shapes what we build next.</p>
             </div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>Can I cancel anytime?</span>
+            <span data-i18n="faq7q">Can I cancel anytime?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 6l4 4 4-4"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <p>Yes, absolutely. During early access, you can stop using CardSync anytime with no obligations. When we launch paid plans in the future, you'll have the option to continue or cancel - no long-term contracts or commitments.</p>
+              <p data-i18n="faq7a">Yes, absolutely. During early access, you can stop using CardSync anytime with no obligations. When we launch paid plans in the future, you'll have the option to continue or cancel - no long-term contracts or commitments.</p>
             </div>
           </div>
         </div>
@@ -408,13 +444,13 @@
           </svg>
           <span class="logo-text">CardSync</span>
         </div>
-        <p class="footer-tagline">Cardmarket shipping, simplified</p>
+        <p class="footer-tagline" data-i18n="foot_tagline">Cardmarket shipping, simplified</p>
       </div>
       <div class="footer-right">
-        <button class="btn-primary btn-waitlist">Sign up</button>
+        <button class="btn-primary btn-waitlist" data-i18n="nav_signup">Sign up</button>
         <div class="footer-links">
-          <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
-          <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>
+          <a href="privacy.html" target="_blank" rel="noopener" data-i18n="foot_privacy">Privacy Policy</a>
+          <a href="terms.html" target="_blank" rel="noopener" data-i18n="foot_terms">Terms of Service</a>
         </div>
       </div>
     </div>
@@ -422,14 +458,14 @@
       <div class="footer-badges">
         <span class="gdpr-badge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          GDPR Compliant
+          <span data-i18n="foot_gdpr">GDPR Compliant</span>
         </span>
         <span class="eu-hosted-badge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           EU Hosted
         </span>
       </div>
-      <p>&copy; 2026 CardSync. All rights reserved.</p>
+      <p data-i18n="foot_copy">&copy; 2026 CardSync. All rights reserved.</p>
     </div>
   </footer>
 
@@ -445,19 +481,19 @@
       <!-- State 1: Location picker -->
       <div class="modal-body" id="modal-location-state">
         <div class="modal-info">
-          <h2 class="modal-header">Where are you based?</h2>
-          <p class="modal-intro">CardSync is currently live in the Netherlands. We're bringing it to more countries soon.</p>
+          <h2 class="modal-header" data-i18n="mod_loc_title">Where are you based?</h2>
+          <p class="modal-intro" data-i18n="mod_loc_intro">CardSync is currently live in the Netherlands. We're bringing it to more countries soon.</p>
         </div>
         <div class="modal-location-cards">
           <a href="https://app.cardsync.eu/#register" class="modal-location-card">
             <span class="location-flag">🇳🇱</span>
             <strong>Netherlands</strong>
-            <span class="location-card-note">Get started free</span>
+            <span class="location-card-note" data-i18n="mod_nl_note">Get started free</span>
           </a>
           <button type="button" class="modal-location-card" id="btn-other-country">
             <span class="location-flag">🌍</span>
-            <strong>Somewhere else</strong>
-            <span class="location-card-note">Join the waitlist</span>
+            <strong data-i18n="mod_other">Somewhere else</strong>
+            <span class="location-card-note" data-i18n="mod_other_note">Join the waitlist</span>
           </button>
         </div>
       </div>
@@ -465,37 +501,37 @@
       <!-- State 2: Waitlist form (non-NL) -->
       <div class="modal-body hidden" id="modal-form-state">
         <div class="modal-info">
-          <h2 class="modal-header">Join the waitlist</h2>
-          <p class="modal-intro">We'll let you know as soon as CardSync launches in your country.</p>
+          <h2 class="modal-header" data-i18n="mod_form_title">Join the waitlist</h2>
+          <p class="modal-intro" data-i18n="mod_form_intro">We'll let you know as soon as CardSync launches in your country.</p>
         </div>
         <form class="modal-form" id="waitlist-form" novalidate>
           <div class="form-group">
-            <label for="waitlist-country">Your country</label>
-            <input type="text" id="waitlist-country" name="country" placeholder="e.g. Germany, Belgium…" autocomplete="country-name">
+            <label for="waitlist-country" data-i18n="mod_label_country">Your country</label>
+            <input type="text" id="waitlist-country" name="country" placeholder="e.g. Germany, Belgium…" autocomplete="country-name" data-i18n-placeholder="mod_ph_country">
             <span class="form-error" id="error-country"></span>
           </div>
           <div class="form-group">
-            <label for="waitlist-username">Cardmarket username</label>
+            <label for="waitlist-username" data-i18n="mod_label_username">Cardmarket username</label>
             <input type="text" id="waitlist-username" name="username" placeholder="Your Cardmarket username" autocomplete="off">
             <span class="form-error" id="error-username"></span>
           </div>
           <div class="form-group">
-            <label for="waitlist-email">Email address</label>
+            <label for="waitlist-email" data-i18n="mod_label_email">Email address</label>
             <input type="email" id="waitlist-email" name="email" placeholder="you@example.com" autocomplete="email">
             <span class="form-error" id="error-email"></span>
           </div>
           <div class="form-group">
-            <label for="waitlist-orders">Orders per month</label>
+            <label for="waitlist-orders" data-i18n="mod_label_orders">Orders per month</label>
             <input type="text" inputmode="numeric" id="waitlist-orders" name="orders" placeholder="e.g. 200" autocomplete="off">
             <span class="form-error" id="error-orders"></span>
           </div>
           <div class="form-group">
-            <label for="waitlist-shipping">Shipping provider</label>
+            <label for="waitlist-shipping" data-i18n="mod_label_shipping">Shipping provider</label>
             <input type="text" id="waitlist-shipping" name="shipping" placeholder="e.g. PostNL, MyParcel, DHL" autocomplete="off">
             <span class="form-error" id="error-shipping"></span>
           </div>
-          <button type="submit" class="btn-primary btn-large btn-block">Notify me when it's available</button>
-          <p class="modal-legal">By joining, you agree to our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>.</p>
+          <button type="submit" class="btn-primary btn-large btn-block" data-i18n="mod_submit">Notify me when it's available</button>
+          <p class="modal-legal" data-i18n-html="mod_legal">By joining, you agree to our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>.</p>
         </form>
       </div>
 
@@ -507,8 +543,8 @@
             <path d="M14 27l8 8 16-16" stroke="var(--green-500)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h2 class="modal-header">You're on the list!</h2>
-        <p class="modal-intro">We'll reach out as soon as CardSync launches in your country.</p>
+        <h2 class="modal-header" data-i18n="mod_success_title">You're on the list!</h2>
+        <p class="modal-intro" data-i18n="mod_success_intro">We'll reach out as soon as CardSync launches in your country.</p>
       </div>
     </div>
   </div>

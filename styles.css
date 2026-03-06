@@ -626,6 +626,130 @@ body {
   line-height: 1.6;
 }
 
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 2px 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-400);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+
+.lang-btn:hover {
+  color: var(--gray-700);
+}
+
+.lang-btn.active {
+  color: var(--gray-900);
+  font-weight: 600;
+}
+
+.lang-sep {
+  font-size: 12px;
+  color: var(--gray-300);
+  user-select: none;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 80px 24px;
+  background: #ffffff;
+}
+
+.testimonials-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.testimonial-headline {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.testimonial-quote {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-700);
+  margin: 0;
+  font-style: normal;
+  flex: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--gray-200);
+  object-fit: cover;
+}
+
+.testimonial-cm-badge {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+.testimonial-author > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.testimonial-meta {
+  font-size: 13px;
+  color: var(--gray-500);
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Supported Countries & Carriers */
 .supported {
   padding: 120px 24px;
