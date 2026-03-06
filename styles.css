@@ -660,6 +660,13 @@ body {
   user-select: none;
 }
 
+.lang-switcher-mobile {
+  justify-content: center;
+  padding: 8px 0 4px;
+  border-top: 1px solid var(--gray-100);
+  margin-top: 4px;
+}
+
 /* Testimonials */
 .testimonials {
   padding: 80px 24px;
